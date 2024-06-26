@@ -273,28 +273,36 @@ export default function JobList() {
                 {item.job_description}
               </Text>
 
-              <View
-                style={{
-                  backgroundColor: "#FFD1C1",
-                  flexDirection: "row",
-                  marginTop: 10,
-                  borderRadius: 10,
-                  width: "30%",
-                  height: 40,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 12,
-                    color: "#E75E31",
-                    // fontWeight:"bold"
-                  }}
-                >
-                  {item.work_skills}
-                </Text>
-              </View>
+              <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+  {item.work_skills.map((item, index) => (
+    <View
+      key={index}
+      style={{
+        backgroundColor: "#FFD1C1",
+        flexDirection: "row",
+        marginTop: 10,
+        marginLeft: 5,
+        borderRadius: 10,
+        width: "30%",
+        height: 40,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text
+        style={{
+          fontSize: 12,
+          color: "#E75E31",
+          // fontWeight:"bold"
+        }}
+      >
+        {item}
+      </Text>
+    </View>
+  ))}
+</View>
+
+
               <View
                 style={{
                   marginTop: 15,
